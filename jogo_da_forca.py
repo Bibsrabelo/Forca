@@ -1,4 +1,5 @@
-# Hangman Game (Jogo da Forca) 
+#!/usr/bin/env python3
+# Hangman Game (Jogo da Forca)
 # Programação Orientada a Objetos
 
 # Import
@@ -74,20 +75,20 @@ class Hangman:
 		self.word = word
 		self.missed = []
 		self.correct = []
-		
+
 	# Método para adivinhar a letra
 	def guess(self, letter):
 		if letter in self.word:
 			return self.correct.append(letter)
 		return self.missed.append(letter)
-		
+
 	# Método para verificar se o jogo terminou
 	def hangman_over(self):
 		maxChance = 6
 		if len(self.missed) == maxChance:
 			return True
 		return False
-		
+
 	# Método para verificar se o jogador venceu
 	def hangman_won(self):
 		list1 = []
@@ -125,7 +126,7 @@ class Hangman:
 			for word in numLetter:
 				agrVai += word + ' '
 			print('\nPalavra: ', agrVai)
-		
+
 	# Método para checar o status do game e imprimir o board na tela
 	def print_game_status(self):
 		if len(self.missed) != 0:
@@ -185,9 +186,9 @@ def main():
 	else:
 		print ('\nGame over! Você perdeu.')
 		print ('A palavra era ' + game.word)
-		
+
 	print ('\nFoi bom jogar com você! Agora vá estudar!\n')
 
-# Executa o programa		
+# Executa o programa
 if __name__ == "__main__":
 	main()
